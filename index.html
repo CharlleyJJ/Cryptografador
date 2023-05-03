@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script type="module">
+      import Vue from "https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.esm.browser.js";
+    </script>
+    <title>Cryptografador</title>
+  </head>
+  <body>
+    <main id="main">
+      <div class="container">
+        <div class="title">
+          <h1 class="Crypto">Cryptografando e Descryptografando</h1>
+        </div>
+        <div class="card__container">
+          <div class="card-item1">
+          <img src="./assets/imgs/up_locked.png" class="pad_lock" alt="" />
+          <h2 class="item__title">Cryptografar</h2>
+          <p style="color: #3FD0FE;">digite aqui o texto para <b>cryptografar</b></p>
+          <div>
+           <form v-on:submit.prevent="criptografar">
+            <input class="input_c" type="text"
+              v-model="txtParaCripto"
+              placeholder="Digite o texto"/>
+            <input type="submit" class="btn-c" style="font-weight: bold;"value="criptografar">
+          </form>
+        </div>
+        </div>
+        <div class="card-item2">
+          <img src="./assets/imgs/open_pad.png" class="pad_open" alt="" />
+          <h2 class="item__title" style="color:white">Descryptografar</h2>
+          <p style="color: #02E9B2;">digite aqui o texto para <b>descryptografar</b></p>
+          <div>
+          <form  v-on:submit.prevent="descriptografar">
+          <input class="input_c" type="text"
+          v-model="txtParaDescripto"
+          placeholder="Digite o texto"/>
+          <input type="submit" class="btn-c" style="font-weight: bold;" value="descriptografar"/>
+        </form>
+      </div>
+        </div>
+      </div>
+      <div class="box-mensagem">
+        <h3 style="color: #3FD0FE;" v-if="resultadoTexto.length > 0">{{ resultadoTitulo }}</h3>
+        <h2 class="resultado">{{ resultadoTexto }}</h2>
+      </div>
+      <div class="box-mensagem" v-if="msgErro.length > 0">
+        <h3 style="color: #02E9B2;">O que houve?</h3>
+        <h2 class="resultado">{{ msgErro }}</h2>
+      </div>
+    </main>
+    <script src="script.js"></script>
+    
+  </body>
+</html>
