@@ -54,7 +54,7 @@ p{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 400px;
+    width: 775px;
     gap: 2rem;
     font-family: 'Roboto', sans-serif;
   }
@@ -253,7 +253,10 @@ border-radius:0.75rem;
  @media screen and (max-width: 799px) {
   .card__container{
     justify-content: space-around;
+    max-width: min-content;
   };
+
+  .title{max-width: min-content;}
 
   .box-mensagem{
     max-width: 400px;
@@ -267,6 +270,6 @@ border-radius:0.75rem;
     display: flex;
     align-items: flex-start;
   };
-
+  
  }
  
